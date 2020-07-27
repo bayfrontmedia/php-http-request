@@ -1,6 +1,6 @@
 ## PHP HTTP request
 
- Handles incoming HTTP requests, including all forms of HTTP request methods, request headers, and data from superglobals $_COOKIE, $_GET, $_POST and $_SERVER.
+Easily handle data from incoming HTTP requests.
 
 - [License](#license)
 - [Author](#author)
