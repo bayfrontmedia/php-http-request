@@ -1,0 +1,50 @@
+{
+  "name": "bayfrontmedia/php-http-request",
+  "description": "Easily handle data from incoming HTTP requests.",
+  "homepage": "https://github.com/bayfrontmedia/php-http-request",
+  "license" : "MIT",
+  "version": "1.0.0",
+  "type": "library",
+  "keywords": [
+    "php",
+    "http",
+    "delete",
+    "get",
+    "head",
+    "patch",
+    "post",
+    "put",
+    "server",
+    "header",
+    "method",
+    "superglobal",
+    "cookie",
+    "request",
+    "url"
+  ],
+  "authors": [
+    {
+      "name": "John Robinson",
+      "email": "john@bayfrontmedia.com",
+      "homepage": "https://www.bayfrontmedia.com",
+      "role": "Developer"
+    }
+  ],
+  "funding": [
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/bayfrontmedia"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "bayfrontmedia/php-array-helpers": "^1.0",
+    "bayfrontmedia/php-validator": "^1.0",
+    "ext-apache": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bayfront\\HttpRequest\\": "src/"
+    }
+  }
+}

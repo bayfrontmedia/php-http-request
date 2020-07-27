@@ -1,0 +1,116 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "a3c4fa4ead1e715f8738eb664f3529c6",
+    "packages": [
+        {
+            "name": "bayfrontmedia/php-array-helpers",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bayfrontmedia/php-array-helpers.git",
+                "reference": "e6ac37163e8f2d5a046e5de61f2974a6d1fda38e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bayfrontmedia/php-array-helpers/zipball/e6ac37163e8f2d5a046e5de61f2974a6d1fda38e",
+                "reference": "e6ac37163e8f2d5a046e5de61f2974a6d1fda38e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bayfront\\ArrayHelpers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Robinson",
+                    "email": "john@bayfrontmedia.com",
+                    "homepage": "https://www.bayfrontmedia.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Helper class to provide useful array functions.",
+            "homepage": "https://github.com/bayfrontmedia/php-array-helpers",
+            "keywords": [
+                "array",
+                "function",
+                "helper",
+                "helpers",
+                "php"
+            ],
+            "time": "2020-07-27T19:08:20+00:00"
+        },
+        {
+            "name": "bayfrontmedia/php-validator",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bayfrontmedia/php-validator.git",
+                "reference": "985ffc6d75c56701a141c53aedd45e5cdfc6c76f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bayfrontmedia/php-validator/zipball/985ffc6d75c56701a141c53aedd45e5cdfc6c76f",
+                "reference": "985ffc6d75c56701a141c53aedd45e5cdfc6c76f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-json": "*",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bayfront\\Validator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Robinson",
+                    "email": "john@bayfrontmedia.com",
+                    "homepage": "https://www.bayfrontmedia.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Simple class used to validate a variety of data.",
+            "homepage": "https://github.com/bayfrontmedia/php-validator",
+            "keywords": [
+                "numbers",
+                "php",
+                "strings",
+                "types",
+                "validate",
+                "validator",
+                "values"
+            ],
+            "time": "2020-07-27T20:22:36+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.1.0"
+    },
+    "platform-dev": []
+}
