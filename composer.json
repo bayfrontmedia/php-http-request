@@ -39,8 +39,7 @@
   "require": {
     "php": ">=7.1.0",
     "bayfrontmedia/php-array-helpers": "^1.0",
-    "bayfrontmedia/php-validator": "^1.0",
-    "ext-apache": "*"
+    "bayfrontmedia/php-validator": "^1.0"
   },
   "autoload": {
     "psr-4": {
