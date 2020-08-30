@@ -18,7 +18,7 @@ John Robinson, [Bayfront Media](https://www.bayfrontmedia.com)
 
 ## Requirements
 
-- PHP > 7.1.0
+- PHP >= 7.1.0
 
 ## Installation
 
@@ -286,7 +286,7 @@ Returns value of single `$_GET` array key in dot notation or entire array, with 
 
 **Parameters:**
 
-- `$key = NULL` (string)
+- `$key = NULL` (string|null)
 - `$default = NULL` (mixed): Default value to return if array key is not found
 
 **Returns:**
@@ -337,7 +337,7 @@ Returns value of single `$_POST` array key in dot notation or entire array, with
 
 **Parameters:**
 
-- `$key = NULL` (string)
+- `$key = NULL` (string|null)
 - `$default = NULL` (mixed): Default value to return if array key is not found
 
 **Returns:**
@@ -388,7 +388,7 @@ Returns value of single `$_SERVER` array key in dot notation or entire array, wi
 
 **Parameters:**
 
-- `$key = NULL` (string)
+- `$key = NULL` (string|null)
 - `$default = NULL` (mixed): Default value to return if array key is not found
 
 **Returns:**
@@ -439,7 +439,7 @@ Returns value of single `$_COOKIE` array key in dot notation or entire array, wi
 
 **Parameters:**
 
-- `$key = NULL` (string)
+- `$key = NULL` (string|null)
 - `$default = NULL` (mixed): Default value to return if array key is not found
 
 **Returns:**
@@ -490,7 +490,7 @@ Returns value of single header array key in dot notation or entire array, with o
 
 **Parameters:**
 
-- `$key = NULL` (string)
+- `$key = NULL` (string|null)
 - `$default = NULL` (mixed): Default value to return if array key is not found
 
 **Returns:**

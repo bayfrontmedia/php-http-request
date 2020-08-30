@@ -1,12 +1,10 @@
 <?php
+
 /**
- * Easily handle data from incoming HTTP requests.
- *
- * @version     1.0.0
- * @link        https://github.com/bayfrontmedia/php-http-request
- * @license     MIT https://opensource.org/licenses/MIT
- * @copyright   2020 Bayfront Media https://www.bayfrontmedia.com
- * @author      John Robinson <john@bayfrontmedia.com>
+ * @package php-http-request
+ * @link https://github.com/bayfrontmedia/php-http-request
+ * @author John Robinson <john@bayfrontmedia.com>
+ * @copyright 2020 Bayfront Media
  */
 
 namespace Bayfront\HttpRequest;
@@ -33,7 +31,7 @@ class Request
     private const METHOD_PUT = 'PUT';
 
     /**
-     * Returns valid request method with a fallback to GET
+     * Returns valid request method with a fallback to GET.
      *
      * @param string $method
      *
@@ -65,7 +63,7 @@ class Request
     }
 
     /**
-     * Returns current request method
+     * Returns current request method.
      *
      * @return string
      */
@@ -76,7 +74,7 @@ class Request
     }
 
     /**
-     * Is current request method DELETE
+     * Is current request method DELETE.
      *
      * @return bool
      */
@@ -87,7 +85,7 @@ class Request
     }
 
     /**
-     * Is current request method GET
+     * Is current request method GET.
      *
      * @return bool
      */
@@ -98,7 +96,7 @@ class Request
     }
 
     /**
-     * Is current request method HEAD
+     * Is current request method HEAD.
      *
      * @return bool
      */
@@ -109,7 +107,7 @@ class Request
     }
 
     /**
-     * Is current request method PATCH
+     * Is current request method PATCH.
      *
      * @return bool
      */
@@ -120,7 +118,7 @@ class Request
     }
 
     /**
-     * Is current request method POST
+     * Is current request method POST.
      *
      * @return bool
      */
@@ -131,7 +129,7 @@ class Request
     }
 
     /**
-     * Is current request method PUT
+     * Is current request method PUT.
      *
      * @return bool
      */
@@ -148,11 +146,11 @@ class Request
      */
 
     /**
-     * Returns value of request type array key in dot notation or entire array, with optional default value
+     * Returns value of request type array key in dot notation or entire array, with optional default value.
      *
      * @param string $type (COOKIE, GET, POST, SERVER, HEADER)
-     * @param string $key
-     * @param $default
+     * @param string|null $key
+     * @param null $default
      *
      * @return mixed
      */
@@ -239,9 +237,9 @@ class Request
     }
 
     /**
-     * Returns value of single $_GET array key in dot notation or entire array, with optional default value
+     * Returns value of single $_GET array key in dot notation or entire array, with optional default value.
      *
-     * @param string $key
+     * @param string|null $key
      * @param mixed $default (Default value to return if array key is not found)
      *
      * @return mixed
@@ -253,7 +251,7 @@ class Request
     }
 
     /**
-     * Checks if $_GET array key exists in dot notation
+     * Checks if $_GET array key exists in dot notation.
      *
      * @param string $key
      *
@@ -266,9 +264,9 @@ class Request
     }
 
     /**
-     * Returns value of single $_POST array key in dot notation or entire array, with optional default value
+     * Returns value of single $_POST array key in dot notation or entire array, with optional default value.
      *
-     * @param string $key
+     * @param string|null $key
      * @param mixed $default (Default value to return if array key is not found)
      *
      * @return mixed
@@ -280,7 +278,7 @@ class Request
     }
 
     /**
-     * Checks if $_POST array key exists in dot notation
+     * Checks if $_POST array key exists in dot notation.
      *
      * @param string $key
      *
@@ -293,9 +291,9 @@ class Request
     }
 
     /**
-     * Returns value of single $_SERVER array key in dot notation or entire array, with optional default value
+     * Returns value of single $_SERVER array key in dot notation or entire array, with optional default value.
      *
-     * @param string $key
+     * @param string|null $key
      * @param mixed $default (Default value to return if array key is not found)
      *
      * @return mixed
@@ -307,7 +305,7 @@ class Request
     }
 
     /**
-     * Checks if $_SERVER array key exists in dot notation
+     * Checks if $_SERVER array key exists in dot notation.
      *
      * @param string $key
      *
@@ -320,9 +318,9 @@ class Request
     }
 
     /**
-     * Returns value of single $_COOKIE array key in dot notation or entire array, with optional default value
+     * Returns value of single $_COOKIE array key in dot notation or entire array, with optional default value.
      *
-     * @param string $key
+     * @param string|null $key
      * @param mixed $default (Default value to return if array key is not found)
      *
      * @return mixed
@@ -334,7 +332,7 @@ class Request
     }
 
     /**
-     * Checks if $_COOKIE array key exists in dot notation
+     * Checks if $_COOKIE array key exists in dot notation.
      *
      * @param string $key
      *
@@ -347,10 +345,10 @@ class Request
     }
 
     /**
-     * Returns value of single header array key in dot notation or entire array, with optional default value
+     * Returns value of single header array key in dot notation or entire array, with optional default value.
      *
-     * @param $key string
-     * @param $default mixed (Default value to return if array key is not found)
+     * @param string|null $key
+     * @param mixed $default (Default value to return if array key is not found)
      *
      * @return mixed
      */
@@ -361,7 +359,7 @@ class Request
     }
 
     /**
-     * Checks if header array key exists in dot notation
+     * Checks if header array key exists in dot notation.
      *
      * @param string $key
      *
@@ -374,7 +372,7 @@ class Request
     }
 
     /**
-     * Returns content body of a request
+     * Returns content body of a request.
      *
      * @return string
      */
@@ -385,7 +383,7 @@ class Request
     }
 
     /**
-     * Checks if content body of a request exists
+     * Checks if content body of a request exists.
      *
      * @return bool
      */
@@ -402,7 +400,7 @@ class Request
      */
 
     /**
-     * Returns client's user agent
+     * Returns client's user agent.
      *
      * @return string|null
      */
@@ -413,7 +411,7 @@ class Request
     }
 
     /**
-     * Returns client's referring URL
+     * Returns client's referring URL.
      *
      * @return mixed (string|null)
      */
@@ -424,7 +422,7 @@ class Request
     }
 
     /**
-     * Returns the most probable IP of client with optional default value
+     * Returns the most probable IP of client with optional default value.
      *
      * @param string $default (Default IP address to return if none detected)
      *
@@ -477,7 +475,7 @@ class Request
     }
 
     /**
-     * Is connection HTTPS
+     * Is connection HTTPS.
      *
      * @return bool
      */
@@ -488,9 +486,9 @@ class Request
     }
 
     /**
-     * Returns array containing details of the client's request, or string of a specific part of the request
+     * Returns array containing details of the client's request, or string of a specific part of the request.
      *
-     * @param $part string (Which part of the request to return. Leaving this blank will return the entire array)
+     * @param string $part (Which part of the request to return. Leaving this blank will return the entire array)
      *
      * Valid $part values include:
      *      method
@@ -528,7 +526,7 @@ class Request
 
         // Host
 
-        $return['host'] = self::getServer('SERVER_NAME');
+        $return['host'] = self::getServer('HTTP_HOST');
 
         // Path
 
@@ -571,7 +569,7 @@ class Request
     }
 
     /**
-     * Returns current URL
+     * Returns current URL.
      *
      * @param bool $include_query (Include the query string, if existing)
      *

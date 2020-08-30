@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a3c4fa4ead1e715f8738eb664f3529c6",
+    "content-hash": "51d18365e74ccb37d953958511f54962",
     "packages": [
         {
             "name": "bayfrontmedia/php-array-helpers",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bayfrontmedia/php-array-helpers.git",
-                "reference": "e6ac37163e8f2d5a046e5de61f2974a6d1fda38e"
+                "reference": "a5d3dd357f6bee31c857e16b1db0199efb10307e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bayfrontmedia/php-array-helpers/zipball/e6ac37163e8f2d5a046e5de61f2974a6d1fda38e",
-                "reference": "e6ac37163e8f2d5a046e5de61f2974a6d1fda38e",
+                "url": "https://api.github.com/repos/bayfrontmedia/php-array-helpers/zipball/a5d3dd357f6bee31c857e16b1db0199efb10307e",
+                "reference": "a5d3dd357f6bee31c857e16b1db0199efb10307e",
                 "shasum": ""
             },
             "require": {
@@ -50,7 +50,7 @@
                 "helpers",
                 "php"
             ],
-            "time": "2020-07-27T19:08:20+00:00"
+            "time": "2020-08-02T22:59:39+00:00"
         },
         {
             "name": "bayfrontmedia/php-validator",

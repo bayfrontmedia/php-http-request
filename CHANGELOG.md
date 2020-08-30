@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
+## [1.0.1] - 2020.08.29
+
+### Changed
+
+- Replaced using `$_SERVER['SERVER_NAME']` with `$_SERVER['HTTP_HOST']` in `getRequest()`, as this is more accurately associated with the incoming HTTP request.
+
 ## [1.0.0] - 2020.07.27
 
 ### Added
