@@ -59,6 +59,8 @@ composer require bayfrontmedia/php-http-request
 - [getUserAgent](#getuseragent)
 - [getReferer](#getreferer)
 - [getIp](#getip)
+- [isJson](#isjson)
+- [wantsJson](#wantsjson)
 - [isHttps](#ishttps)
 - [getRequest](#getrequest)
 - [getUrl](#geturl)
@@ -651,6 +653,58 @@ Returns the most probable IP of client with optional default value.
 use Bayfront\HttpRequest\Request;
 
 echo Request::getIp();
+```
+
+<hr />
+
+### isJson
+
+**Description:**
+
+Is the `Content-Type` header for this request JSON.
+
+**Parameters:**
+
+- None
+
+**Returns:**
+
+- (bool)
+
+**Example:**
+
+```
+use Bayfront\HttpRequest\Request;
+
+if (Request::isJson()) {
+    // Do something
+}
+```
+
+<hr />
+
+### wantsJson
+
+**Description:**
+
+Does the `Accept` header for this request expect JSON.
+
+**Parameters:**
+
+- None
+
+**Returns:**
+
+- (bool)
+
+**Example:**
+
+```
+use Bayfront\HttpRequest\Request;
+
+if (Request::wantsJson()) {
+    // Do something
+}
 ```
 
 <hr />

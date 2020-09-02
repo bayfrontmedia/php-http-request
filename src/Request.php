@@ -475,6 +475,28 @@ class Request
     }
 
     /**
+     * Is the Content-Type header for this request JSON.
+     *
+     * @return bool
+     */
+
+    public static function isJson(): bool
+    {
+        return strpos(strtolower(self::getHeader('Content-Type', '')), 'json') !== false;
+    }
+
+    /**
+     * Does the Accept header for this request expect JSON.
+     *
+     * @return bool
+     */
+
+    public static function wantsJson(): bool
+    {
+        return strpos(strtolower(self::getHeader('Accept', '')), 'json') !== false;
+    }
+
+    /**
      * Is connection HTTPS.
      *
      * @return bool
