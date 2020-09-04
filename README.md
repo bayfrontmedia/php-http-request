@@ -32,12 +32,15 @@ composer require bayfrontmedia/php-http-request
 
 - [validateMethod](#validatemethod)
 - [getMethod](#getmethod)
+- [isConnect](#isconnect)
 - [isDelete](#isdelete)
 - [isGet](#isget)
 - [isHead](#ishead)
+- [isOptions](#isoptions)
 - [isPatch](#ispatch)
 - [isPost](#ispost)
 - [isPut](#isput)
+- [isTrace](#istrace)
 
 **Data types**
 
@@ -75,12 +78,15 @@ Returns valid request method with a fallback to `GET`.
 
 Valid request methods include:
 
+- `CONNECT`
 - `DELETE`
 - `GET`
 - `HEAD`
+- `OPTIONS`
 - `PATCH`
 - `POST`
 - `PUT`
+- `TRACE`
 
 **Parameters:**
 
@@ -120,6 +126,32 @@ Returns current request method.
 use Bayfront\HttpRequest\Request;
 
 echo Request::getMethod();
+```
+
+<hr />
+
+### isConnect
+
+**Description:**
+
+Is current request method `CONNECT`.
+
+**Parameters:**
+
+- None
+
+**Returns:**
+
+- (bool)
+
+**Example:**
+
+```
+use Bayfront\HttpRequest\Request;
+
+if (Request::isConnect()) {
+    // Do something
+}
 ```
 
 <hr />
@@ -202,6 +234,32 @@ if (Request::isHead()) {
 
 <hr />
 
+### isOptions
+
+**Description:**
+
+Is current request method `OPTIONS`.
+
+**Parameters:**
+
+- None
+
+**Returns:**
+
+- (bool)
+
+**Example:**
+
+```
+use Bayfront\HttpRequest\Request;
+
+if (Request::isOptions()) {
+    // Do something
+}
+```
+
+<hr />
+
 ### isPatch
 
 **Description:**
@@ -274,6 +332,32 @@ Is current request method `PUT`.
 use Bayfront\HttpRequest\Request;
 
 if (Request::isPut()) {
+    // Do something
+}
+```
+
+<hr />
+
+### isTrace
+
+**Description:**
+
+Is current request method `TRACE`.
+
+**Parameters:**
+
+- None
+
+**Returns:**
+
+- (bool)
+
+**Example:**
+
+```
+use Bayfront\HttpRequest\Request;
+
+if (Request::isTrace()) {
     // Do something
 }
 ```

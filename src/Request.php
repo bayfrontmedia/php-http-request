@@ -23,12 +23,15 @@ class Request
 
     // Valid request methods
 
-    private const METHOD_DELETE = 'DELETE';
-    private const METHOD_GET = 'GET';
-    private const METHOD_HEAD = 'HEAD';
-    private const METHOD_PATCH = 'PATCH';
-    private const METHOD_POST = 'POST';
-    private const METHOD_PUT = 'PUT';
+    public const METHOD_CONNECT = 'CONNECT';
+    public const METHOD_DELETE = 'DELETE';
+    public const METHOD_GET = 'GET';
+    public const METHOD_HEAD = 'HEAD';
+    public const METHOD_OPTIONS = 'OPTIONS';
+    public const METHOD_PATCH = 'PATCH';
+    public const METHOD_POST = 'POST';
+    public const METHOD_PUT = 'PUT';
+    public const METHOD_TRACE = 'TRACE';
 
     /**
      * Returns valid request method with a fallback to GET.
@@ -45,12 +48,15 @@ class Request
 
         switch ($method) {
 
+            case self::METHOD_CONNECT:
             case self::METHOD_DELETE:
             case self::METHOD_GET:
             case self::METHOD_HEAD:
+            case self::METHOD_OPTIONS:
             case self::METHOD_PATCH:
             case self::METHOD_POST:
             case self::METHOD_PUT:
+            case self::METHOD_TRACE:
 
                 return $method;
 
@@ -71,6 +77,17 @@ class Request
     public static function getMethod(): string
     {
         return self::validateMethod(self::getServer('REQUEST_METHOD'));
+    }
+
+    /**
+     * Is current request method CONNECT.
+     *
+     * @return bool
+     */
+
+    public static function isConnect(): bool
+    {
+        return self::getMethod() == self::METHOD_CONNECT;
     }
 
     /**
@@ -107,6 +124,17 @@ class Request
     }
 
     /**
+     * Is current request method OPTIONS.
+     *
+     * @return bool
+     */
+
+    public static function isOptions(): bool
+    {
+        return self::getMethod() == self::METHOD_OPTIONS;
+    }
+
+    /**
      * Is current request method PATCH.
      *
      * @return bool
@@ -137,6 +165,17 @@ class Request
     public static function isPut(): bool
     {
         return self::getMethod() == self::METHOD_PUT;
+    }
+
+    /**
+     * Is current request method TRACE.
+     *
+     * @return bool
+     */
+
+    public static function isTrace(): bool
+    {
+        return self::getMethod() == self::METHOD_TRACE;
     }
 
     /*
