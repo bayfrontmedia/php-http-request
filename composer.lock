@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d447da6f2c0dfcae04060263371b4abd",
+    "content-hash": "a95bc3888b78c0ce30f4936f003fba99",
     "packages": [
         {
             "name": "bayfrontmedia/php-array-helpers",
