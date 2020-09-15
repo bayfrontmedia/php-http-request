@@ -62,6 +62,7 @@ composer require bayfrontmedia/php-http-request
 - [getUserAgent](#getuseragent)
 - [getReferer](#getreferer)
 - [getIp](#getip)
+- [isCli](#iscli)
 - [isJson](#isjson)
 - [wantsJson](#wantsjson)
 - [isHttps](#ishttps)
@@ -737,6 +738,32 @@ Returns the most probable IP of client with optional default value.
 use Bayfront\HttpRequest\Request;
 
 echo Request::getIp();
+```
+
+<hr />
+
+### isCli
+
+**Description:**
+
+Is the request originating from the command line.
+
+**Parameters:**
+
+- None
+
+**Returns:**
+
+- (bool)
+
+**Example:**
+
+```
+use Bayfront\HttpRequest\Request;
+
+if (Request::isCli()) {
+    // Do something
+}
 ```
 
 <hr />

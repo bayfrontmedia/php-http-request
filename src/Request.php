@@ -514,6 +514,27 @@ class Request
     }
 
     /**
+     * Is the request originating from the command line.
+     *
+     * @return bool
+     */
+
+    public static function isCli(): bool
+    {
+
+        if (php_sapi_name() === 'cli') {
+            return true;
+        }
+
+        if (empty(self::getServer('REMOTE_ADDR', [])) && !self::hasServer('HTTP_USER_AGENT')) {
+            return true;
+        }
+
+        return false;
+
+    }
+
+    /**
      * Is the Content-Type header for this request JSON.
      *
      * @return bool
