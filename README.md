@@ -54,8 +54,8 @@ composer require bayfrontmedia/php-http-request
 - [hasCookie](#hascookie)
 - [getHeader](#getheader)
 - [hasHeader](#hasheader)
-- [getContent](#getcontent)
-- [hasContent](#hascontent)
+- [getBody](#getbody)
+- [hasBody](#hasbody)
 
 **Specific values**
 
@@ -620,7 +620,7 @@ if (Request::hasHeader('Content-Type')) {
 
 <hr />
 
-### getContent
+### getBody
 
 **Description:**
 
@@ -639,12 +639,12 @@ Returns content body of a request.
 ```
 use Bayfront\HttpRequest\Request;
 
-print_r(Request::getContent());
+print_r(Request::getBody());
 ```
 
 <hr />
 
-### hasContent
+### hasBody
 
 **Description:**
 
@@ -663,7 +663,7 @@ Checks if content body of a request exists.
 ```
 use Bayfront\HttpRequest\Request;
 
-if (Request::hasContent()) {
+if (Request::hasBody()) {
     // Do something
 }
 ```

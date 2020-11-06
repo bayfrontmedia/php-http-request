@@ -38,7 +38,7 @@
   ],
   "require": {
     "php": ">=7.1.0",
-    "bayfrontmedia/php-array-helpers": "^1.0.0",
+    "bayfrontmedia/php-array-helpers": "^1.0.1",
     "bayfrontmedia/php-validator": "^1.0.0"
   },
   "autoload": {

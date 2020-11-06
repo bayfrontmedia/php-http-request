@@ -416,7 +416,7 @@ class Request
      * @return string
      */
 
-    public static function getContent(): string
+    public static function getBody(): string
     {
         return file_get_contents('php://input');
     }
@@ -427,9 +427,9 @@ class Request
      * @return bool
      */
 
-    public static function hasContent(): bool
+    public static function hasBody(): bool
     {
-        return (self::getContent()) ? true : false;
+        return (self::getBody()) ? true : false;
     }
 
     /*
