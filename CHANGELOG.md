@@ -12,6 +12,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
+## [2.0.1] - 2021.02.15
+
+### Changed
+
+- Updated vendor libraries.
+
+### Fixed
+
+- Fixed bug in `isHttps` method not detecting https behind a load balancer.
+
 ## [2.0.0] - 2020.11.06
 
 ### Changed

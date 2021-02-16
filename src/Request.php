@@ -564,7 +564,14 @@ class Request
 
     public static function isHttps(): bool
     {
-        return (!empty(self::getServer('HTTPS')) && self::getServer('HTTPS') != 'off') || self::getServer('SERVER_PORT') == 443;
+
+        if (self::getServer('HTTPS') == 'on'
+            || self::getServer('SERVER_PORT') == 443
+            || self::getServer('HTTP_X_FORWARDED_PROTO') == 'https') {
+            return true;
+        }
+
+        return false;
     }
 
     /**

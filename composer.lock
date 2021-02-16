@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3da893816588a2eea74905721ecc519",
+    "content-hash": "98d5fd4fe32c2477959dfcf57e8238c9",
     "packages": [
         {
             "name": "bayfrontmedia/php-array-helpers",
-            "version": "1.0.1",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bayfrontmedia/php-array-helpers.git",
-                "reference": "a5d3dd357f6bee31c857e16b1db0199efb10307e"
+                "reference": "8e5d6c5a8a6d89c51b2378ae4a067ec8071acea3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bayfrontmedia/php-array-helpers/zipball/a5d3dd357f6bee31c857e16b1db0199efb10307e",
-                "reference": "a5d3dd357f6bee31c857e16b1db0199efb10307e",
+                "url": "https://api.github.com/repos/bayfrontmedia/php-array-helpers/zipball/8e5d6c5a8a6d89c51b2378ae4a067ec8071acea3",
+                "reference": "8e5d6c5a8a6d89c51b2378ae4a067ec8071acea3",
                 "shasum": ""
             },
             "require": {
@@ -50,23 +50,34 @@
                 "helpers",
                 "php"
             ],
-            "time": "2020-08-02T22:59:39+00:00"
+            "support": {
+                "issues": "https://github.com/bayfrontmedia/php-array-helpers/issues",
+                "source": "https://github.com/bayfrontmedia/php-array-helpers/tree/v1.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.patreon.com/bayfrontmedia",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2021-02-05T20:06:16+00:00"
         },
         {
             "name": "bayfrontmedia/php-validator",
-            "version": "1.0.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bayfrontmedia/php-validator.git",
-                "reference": "985ffc6d75c56701a141c53aedd45e5cdfc6c76f"
+                "reference": "19d1fff3410172e103e74a707bd88d152580754f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bayfrontmedia/php-validator/zipball/985ffc6d75c56701a141c53aedd45e5cdfc6c76f",
-                "reference": "985ffc6d75c56701a141c53aedd45e5cdfc6c76f",
+                "url": "https://api.github.com/repos/bayfrontmedia/php-validator/zipball/19d1fff3410172e103e74a707bd88d152580754f",
+                "reference": "19d1fff3410172e103e74a707bd88d152580754f",
                 "shasum": ""
             },
             "require": {
+                "bayfrontmedia/php-array-helpers": "^1.1.0",
                 "ext-ctype": "*",
                 "ext-json": "*",
                 "php": ">=7.1.0"
@@ -100,7 +111,17 @@
                 "validator",
                 "values"
             ],
-            "time": "2020-07-27T20:22:36+00:00"
+            "support": {
+                "issues": "https://github.com/bayfrontmedia/php-validator/issues",
+                "source": "https://github.com/bayfrontmedia/php-validator/tree/v1.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.patreon.com/bayfrontmedia",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2021-02-05T17:19:42+00:00"
         }
     ],
     "packages-dev": [],
@@ -112,5 +133,6 @@
     "platform": {
         "php": ">=7.1.0"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }
