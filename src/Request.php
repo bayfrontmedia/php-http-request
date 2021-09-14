@@ -187,7 +187,7 @@ class Request
     /**
      * Returns value of request type array key in dot notation or entire array, with optional default value.
      *
-     * @param string $type (COOKIE, GET, POST, SERVER, HEADER)
+     * @param string $type (COOKIE, FILE, GET, POST, SERVER, HEADER)
      * @param string|null $key
      * @param null $default
      *
@@ -210,6 +210,16 @@ class Request
                 if (isset($_COOKIE)) {
 
                     $array = $_COOKIE;
+
+                }
+
+                break;
+
+            case 'FILE':
+
+                if (isset($_FILES)) {
+
+                    $array = $_FILES;
 
                 }
 
@@ -276,6 +286,33 @@ class Request
     }
 
     /**
+     * Returns value of single $_FILES array key in dot notation or entire array, with optional default value.
+     *
+     * @param string|null $key
+     * @param mixed $default (Default value to return if array key is not found)
+     *
+     * @return mixed
+     */
+
+    public static function getFile(string $key = NULL, $default = NULL)
+    {
+        return self::_getType('FILE', $key, $default);
+    }
+
+    /**
+     * Checks if $_FILES array key exists in dot notation.
+     *
+     * @param string $key
+     *
+     * @return bool
+     */
+
+    public static function hasFile(string $key): bool
+    {
+        return (bool)self::getFile($key);
+    }
+
+    /**
      * Returns value of single $_GET array key in dot notation or entire array, with optional default value.
      *
      * @param string|null $key
@@ -299,7 +336,7 @@ class Request
 
     public static function hasQuery(string $key): bool
     {
-        return (self::getQuery($key)) ? true : false;
+        return (bool)self::getQuery($key);
     }
 
     /**
@@ -326,7 +363,7 @@ class Request
 
     public static function hasPost(string $key): bool
     {
-        return (self::getPost($key)) ? true : false;
+        return (bool)self::getPost($key);
     }
 
     /**
@@ -353,7 +390,7 @@ class Request
 
     public static function hasServer(string $key): bool
     {
-        return (self::getServer($key)) ? true : false;
+        return (bool)self::getServer($key);
     }
 
     /**
@@ -380,7 +417,7 @@ class Request
 
     public static function hasCookie(string $key): bool
     {
-        return (self::getCookie($key)) ? true : false;
+        return (bool)self::getCookie($key);
     }
 
     /**
@@ -407,7 +444,7 @@ class Request
 
     public static function hasHeader(string $key): bool
     {
-        return (self::getHeader($key)) ? true : false;
+        return (bool)self::getHeader($key);
     }
 
     /**
@@ -429,7 +466,7 @@ class Request
 
     public static function hasBody(): bool
     {
-        return (self::getBody()) ? true : false;
+        return (bool)self::getBody();
     }
 
     /*

@@ -44,6 +44,8 @@ composer require bayfrontmedia/php-http-request
 
 **Data types**
 
+- [getFile](#getfile)
+- [hasFile](#hasfile)
 - [getQuery](#getquery)
 - [hasQuery](#hasquery)
 - [getPost](#getpost)
@@ -359,6 +361,57 @@ Is current request method `TRACE`.
 use Bayfront\HttpRequest\Request;
 
 if (Request::isTrace()) {
+    // Do something
+}
+```
+
+<hr />
+
+### getFile
+
+**Description:**
+
+Returns value of single `$_FILES` array key in dot notation or entire array, with optional default value.
+
+**Parameters:**
+
+- `$key = NULL` (string|null)
+- `$default = NULL` (mixed): Default value to return if array key is not found
+
+**Returns:**
+
+- (mixed)
+
+**Example:**
+
+```
+use Bayfront\HttpRequest\Request;
+
+print_r(Request::getFile('profile_photo'));
+```
+
+<hr />
+
+### hasFile
+
+**Description:**
+
+Checks if `$_FILES` array key exists in dot notation.
+
+**Parameters:**
+
+- `$key` (string)
+
+**Returns:**
+
+- (bool)
+
+**Example:**
+
+```
+use Bayfront\HttpRequest\Request;
+
+if (Request::hasFile('profile_photo')) {
     // Do something
 }
 ```

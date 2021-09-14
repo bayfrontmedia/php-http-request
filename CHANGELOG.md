@@ -12,6 +12,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
+## [2.1.0] - 2021.09.14
+
+### Added
+
+- Added support for `$_FILES` global with the `getFile` and `hasFile` methods.
+
+### Changed
+
+- Updated vendor libraries.
+
 ## [2.0.1] - 2021.02.15
 
 ### Changed
