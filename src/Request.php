@@ -1,12 +1,5 @@
 <?php
 
-/**
- * @package php-http-request
- * @link https://github.com/bayfrontmedia/php-http-request
- * @author John Robinson <john@bayfrontmedia.com>
- * @copyright 2020 Bayfront Media
- */
-
 namespace Bayfront\HttpRequest;
 
 use Bayfront\ArrayHelpers\Arr;
@@ -46,25 +39,10 @@ class Request
 
         $method = strtoupper($method);
 
-        switch ($method) {
-
-            case self::METHOD_CONNECT:
-            case self::METHOD_DELETE:
-            case self::METHOD_GET:
-            case self::METHOD_HEAD:
-            case self::METHOD_OPTIONS:
-            case self::METHOD_PATCH:
-            case self::METHOD_POST:
-            case self::METHOD_PUT:
-            case self::METHOD_TRACE:
-
-                return $method;
-
-            default:
-
-                return self::METHOD_GET; // Fallback
-
-        }
+        return match ($method) {
+            self::METHOD_CONNECT, self::METHOD_DELETE, self::METHOD_GET, self::METHOD_HEAD, self::METHOD_OPTIONS, self::METHOD_PATCH, self::METHOD_POST, self::METHOD_PUT, self::METHOD_TRACE => $method,
+            default => self::METHOD_GET,
+        };
 
     }
 
@@ -194,7 +172,7 @@ class Request
      * @return mixed
      */
 
-    private static function _getType(string $type, string $key = NULL, $default = NULL)
+    private static function _getType(string $type, string $key = NULL, $default = NULL): mixed
     {
 
         // -------------------- Get correct type --------------------
@@ -289,12 +267,12 @@ class Request
      * Returns value of single $_FILES array key in dot notation or entire array, with optional default value.
      *
      * @param string|null $key
-     * @param mixed $default (Default value to return if array key is not found)
+     * @param mixed|null $default (Default value to return if array key is not found)
      *
      * @return mixed
      */
 
-    public static function getFile(string $key = NULL, $default = NULL)
+    public static function getFile(string $key = NULL, mixed $default = NULL): mixed
     {
         return self::_getType('FILE', $key, $default);
     }
@@ -316,12 +294,12 @@ class Request
      * Returns value of single $_GET array key in dot notation or entire array, with optional default value.
      *
      * @param string|null $key
-     * @param mixed $default (Default value to return if array key is not found)
+     * @param mixed|null $default (Default value to return if array key is not found)
      *
      * @return mixed
      */
 
-    public static function getQuery(string $key = NULL, $default = NULL)
+    public static function getQuery(string $key = NULL, mixed $default = NULL): mixed
     {
         return self::_getType('GET', $key, $default);
     }
@@ -343,12 +321,12 @@ class Request
      * Returns value of single $_POST array key in dot notation or entire array, with optional default value.
      *
      * @param string|null $key
-     * @param mixed $default (Default value to return if array key is not found)
+     * @param mixed|null $default (Default value to return if array key is not found)
      *
      * @return mixed
      */
 
-    public static function getPost(string $key = NULL, $default = NULL)
+    public static function getPost(string $key = NULL, mixed $default = NULL): mixed
     {
         return self::_getType('POST', $key, $default);
     }
@@ -370,12 +348,12 @@ class Request
      * Returns value of single $_SERVER array key in dot notation or entire array, with optional default value.
      *
      * @param string|null $key
-     * @param mixed $default (Default value to return if array key is not found)
+     * @param mixed|null $default (Default value to return if array key is not found)
      *
      * @return mixed
      */
 
-    public static function getServer(string $key = NULL, $default = NULL)
+    public static function getServer(string $key = NULL, mixed $default = NULL): mixed
     {
         return self::_getType('SERVER', $key, $default);
     }
@@ -397,12 +375,12 @@ class Request
      * Returns value of single $_COOKIE array key in dot notation or entire array, with optional default value.
      *
      * @param string|null $key
-     * @param mixed $default (Default value to return if array key is not found)
+     * @param mixed|null $default (Default value to return if array key is not found)
      *
      * @return mixed
      */
 
-    public static function getCookie(string $key = NULL, $default = NULL)
+    public static function getCookie(string $key = NULL, mixed $default = NULL): mixed
     {
         return self::_getType('COOKIE', $key, $default);
     }
@@ -424,12 +402,12 @@ class Request
      * Returns value of single header array key in dot notation or entire array, with optional default value.
      *
      * @param string|null $key
-     * @param mixed $default (Default value to return if array key is not found)
+     * @param mixed|null $default (Default value to return if array key is not found)
      *
      * @return mixed
      */
 
-    public static function getHeader(string $key = NULL, $default = NULL)
+    public static function getHeader(string $key = NULL, mixed $default = NULL): mixed
     {
         return self::_getType('HEADER', $key, $default);
     }
@@ -492,7 +470,7 @@ class Request
      * @return mixed (string|null)
      */
 
-    public static function getReferer()
+    public static function getReferer(): mixed
     {
         return self::getServer('HTTP_REFERER');
     }
@@ -559,7 +537,7 @@ class Request
     public static function isCli(): bool
     {
 
-        if (php_sapi_name() === 'cli') {
+        if (str_contains(php_sapi_name(), 'cli')) {
             return true;
         }
 
@@ -579,7 +557,7 @@ class Request
 
     public static function isJson(): bool
     {
-        return strpos(strtolower(self::getHeader('Content-Type', '')), 'json') !== false;
+        return str_contains(strtolower(self::getHeader('Content-Type', '')), 'json');
     }
 
     /**
@@ -590,7 +568,7 @@ class Request
 
     public static function wantsJson(): bool
     {
-        return strpos(strtolower(self::getHeader('Accept', '')), 'json') !== false;
+        return str_contains(strtolower(self::getHeader('Accept', '')), 'json');
     }
 
     /**
@@ -629,7 +607,7 @@ class Request
      * @return mixed (array|string)
      */
 
-    public static function getRequest(string $part = '')
+    public static function getRequest(string $part = ''): mixed
     {
 
         $return = [];
