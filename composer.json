@@ -39,7 +39,7 @@
   "require": {
     "php": "^8.0",
     "bayfrontmedia/php-array-helpers": "^2.0",
-    "bayfrontmedia/php-validator": "^2.0"
+    "bayfrontmedia/php-validator": "^3.0"
   },
   "autoload": {
     "psr-4": {
