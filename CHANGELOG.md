@@ -12,6 +12,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
+## [3.1.0] - 2024.09.09
+
+### Added
+
+- Added `PART_*` constants to be used in the `getRequest` method.
+
+### Removed
+
+- Removed dependency for `php-validator` library.
+
 ## [3.0.1] - 2023.05.14
 
 ### Changed

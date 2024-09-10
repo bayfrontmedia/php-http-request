@@ -3,15 +3,14 @@
 namespace Bayfront\HttpRequest;
 
 use Bayfront\ArrayHelpers\Arr;
-use Bayfront\Validator\Validate;
 
 class Request
 {
 
     /*
-     * ############################################################
-     * Request methods
-     * ############################################################
+     * |--------------------------------------------------------------------------
+     * | Request methods
+     * |--------------------------------------------------------------------------
      */
 
     // Valid request methods
@@ -157,9 +156,9 @@ class Request
     }
 
     /*
-     * ############################################################
-     * Data types
-     * ############################################################
+     * |--------------------------------------------------------------------------
+     * | Data types
+     * |--------------------------------------------------------------------------
      */
 
     /**
@@ -186,9 +185,7 @@ class Request
             case 'COOKIE':
 
                 if (isset($_COOKIE)) {
-
                     $array = $_COOKIE;
-
                 }
 
                 break;
@@ -196,9 +193,7 @@ class Request
             case 'FILE':
 
                 if (isset($_FILES)) {
-
                     $array = $_FILES;
-
                 }
 
                 break;
@@ -206,9 +201,7 @@ class Request
             case 'GET':
 
                 if (isset($_GET)) {
-
                     $array = $_GET;
-
                 }
 
                 break;
@@ -216,9 +209,7 @@ class Request
             case 'POST':
 
                 if (isset($_POST)) {
-
                     $array = $_POST;
-
                 }
 
                 break;
@@ -226,9 +217,7 @@ class Request
             case 'SERVER':
 
                 if (isset($_SERVER)) {
-
                     $array = $_SERVER;
-
                 }
 
                 break;
@@ -236,9 +225,7 @@ class Request
             case 'HEADER':
 
                 if (function_exists('getallheaders')) {
-
                     $array = getallheaders();
-
                 }
 
                 break;
@@ -448,9 +435,9 @@ class Request
     }
 
     /*
-     * ############################################################
-     * Specific values
-     * ############################################################
+     * |--------------------------------------------------------------------------
+     * | Specific values
+     * |--------------------------------------------------------------------------
      */
 
     /**
@@ -506,7 +493,7 @@ class Request
 
                     $ip = trim($ip);
 
-                    if (Validate::ip($ip)) {
+                    if (filter_var($ip, FILTER_VALIDATE_IP)) {
 
                         if ($ip == '::1') { // Localhost will return ::1
 
@@ -589,20 +576,34 @@ class Request
         return false;
     }
 
+    /*
+     * Valid request parts used in getRequest method
+     */
+
+    public const PART_METHOD = 'method';
+    public const PART_PROTOCOL = 'protocol';
+    public const PART_HOST = 'host';
+    public const PART_PATH = 'path';
+    public const PART_QUERY = 'query';
+    public const PART_QUERY_STRING = 'query_string';
+    public const PART_URL = 'url';
+    public const PART_FULL_URL = 'full_url';
+
     /**
      * Returns array containing details of the client's request, or string of a specific part of the request.
      *
      * @param string $part (Which part of the request to return. Leaving this blank will return the entire array)
      *
-     * Valid $part values include:
-     *      method
-     *      protocol
-     *      host
-     *      path
-     *      query
-     *      query_string
-     *      url
-     *      full_url
+     * Valid $part values include any of the PART_* constants:
+     *
+     *   - PART_METHOD
+     *   - PART_PROTOCOL
+     *   - PART_HOST
+     *   - PART_PATH
+     *   - PART_QUERY
+     *   - PART_QUERY_STRING
+     *   - PART_URL
+     *   - PART_FULL_URL
      *
      * @return mixed (array|string)
      */
@@ -614,57 +615,57 @@ class Request
 
         // Method
 
-        $return['method'] = self::getMethod();
+        $return[self::PART_METHOD] = self::getMethod();
 
         // Protocol
 
         if (self::isHttps()) {
 
-            $return['protocol'] = 'https://';
+            $return[self::PART_PROTOCOL] = 'https://';
 
         } else {
 
-            $return['protocol'] = 'http://';
+            $return[self::PART_PROTOCOL] = 'http://';
 
         }
 
         // Host
 
-        $return['host'] = self::getServer('HTTP_HOST');
+        $return[self::PART_HOST] = self::getServer('HTTP_HOST');
 
         // Path
 
         $path = explode('?', self::getServer('REQUEST_URI'), 2);
 
-        $return['path'] = $path[0];
+        $return[self::PART_PATH] = $path[0];
 
         // Query
 
         $query = self::getQuery();
 
-        $return['query_string'] = '';
+        $return[self::PART_QUERY_STRING] = '';
 
         if (!empty($query)) {
 
-            $return['query'] = $query;
+            $return[self::PART_QUERY] = $query;
 
-            $return['query_string'] = http_build_query($query);
+            $return[self::PART_QUERY_STRING] = http_build_query($query);
 
         } else {
 
-            $return['query'] = [];
+            $return[self::PART_QUERY] = [];
 
         }
 
         // URL
 
-        $return['url'] = $return['protocol'] . $return['host'] . $return['path'];
+        $return[self::PART_URL] = $return[self::PART_PROTOCOL] . $return[self::PART_HOST] . $return[self::PART_PATH];
 
-        $return['full_url'] = $return['url'];
+        $return[self::PART_FULL_URL] = $return[self::PART_URL];
 
-        if ($return['query_string'] != '') {
+        if ($return[self::PART_QUERY_STRING] != '') {
 
-            $return['full_url'] = $return['url'] . '?' . $return['query_string'];
+            $return[self::PART_FULL_URL] = $return[self::PART_URL] . '?' . $return[self::PART_QUERY_STRING];
 
         }
 
@@ -685,11 +686,11 @@ class Request
 
         if (false === $include_query) {
 
-            return self::getRequest('url');
+            return self::getRequest(self::PART_URL);
 
         }
 
-        return self::getRequest('full_url');
+        return self::getRequest(self::PART_FULL_URL);
 
     }
 

@@ -912,16 +912,16 @@ Returns array containing details of the client's request, or string of a specifi
 
 - `$part = ''` (string): Which part of the request to return. Leaving this blank will return the entire array.
 
-Valid `$part` values are:
+Valid `$part` values include any of the `PART_*` constants:
 
-- `method`
-- `protocol`
-- `host`
-- `path`
-- `query`
-- `query_string`
-- `url`
-- `full_url`
+- `Requst::PART_METHOD`
+- `Request::PART_PROTOCOL`
+- `Request::PART_HOST`
+- `Request::PART_PATH`
+- `Request::PART_QUERY`
+- `Request::PART_QUERY_STRING`
+- `Request::PART_URL`
+- `Request::PART_FULL_URL`
 
 **Returns:**
 
