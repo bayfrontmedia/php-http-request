@@ -932,7 +932,7 @@ Valid `$part` values include any of the `PART_*` constants:
 ```
 use Bayfront\HttpRequest\Request;
 
-echo Request::getRequest('url');
+echo Request::getRequest(Request::PART_URL);
 ```
 
 <hr />
