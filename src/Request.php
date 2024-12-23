@@ -171,7 +171,7 @@ class Request
      * @return mixed
      */
 
-    private static function _getType(string $type, string $key = NULL, $default = NULL): mixed
+    private static function _getType(string $type, ?string $key = NULL, $default = NULL): mixed
     {
 
         // -------------------- Get correct type --------------------
@@ -259,7 +259,7 @@ class Request
      * @return mixed
      */
 
-    public static function getFile(string $key = NULL, mixed $default = NULL): mixed
+    public static function getFile(?string $key = NULL, mixed $default = NULL): mixed
     {
         return self::_getType('FILE', $key, $default);
     }
@@ -286,7 +286,7 @@ class Request
      * @return mixed
      */
 
-    public static function getQuery(string $key = NULL, mixed $default = NULL): mixed
+    public static function getQuery(?string $key = NULL, mixed $default = NULL): mixed
     {
         return self::_getType('GET', $key, $default);
     }
@@ -313,7 +313,7 @@ class Request
      * @return mixed
      */
 
-    public static function getPost(string $key = NULL, mixed $default = NULL): mixed
+    public static function getPost(?string $key = NULL, mixed $default = NULL): mixed
     {
         return self::_getType('POST', $key, $default);
     }
@@ -340,7 +340,7 @@ class Request
      * @return mixed
      */
 
-    public static function getServer(string $key = NULL, mixed $default = NULL): mixed
+    public static function getServer(?string $key = NULL, mixed $default = NULL): mixed
     {
         return self::_getType('SERVER', $key, $default);
     }
@@ -367,7 +367,7 @@ class Request
      * @return mixed
      */
 
-    public static function getCookie(string $key = NULL, mixed $default = NULL): mixed
+    public static function getCookie(?string $key = NULL, mixed $default = NULL): mixed
     {
         return self::_getType('COOKIE', $key, $default);
     }
@@ -394,7 +394,7 @@ class Request
      * @return mixed
      */
 
-    public static function getHeader(string $key = NULL, mixed $default = NULL): mixed
+    public static function getHeader(?string $key = NULL, mixed $default = NULL): mixed
     {
         return self::_getType('HEADER', $key, $default);
     }
