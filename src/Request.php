@@ -53,7 +53,7 @@ class Request
 
     public static function getMethod(): string
     {
-        return self::validateMethod(self::getServer('REQUEST_METHOD'));
+        return self::validateMethod(self::getServer('REQUEST_METHOD', 'GET'));
     }
 
     /**
@@ -631,11 +631,11 @@ class Request
 
         // Host
 
-        $return[self::PART_HOST] = self::getServer('HTTP_HOST');
+        $return[self::PART_HOST] = self::getServer('HTTP_HOST', '');
 
         // Path
 
-        $path = explode('?', self::getServer('REQUEST_URI'), 2);
+        $path = explode('?', self::getServer('REQUEST_URI', ''), 2);
 
         $return[self::PART_PATH] = $path[0];
 
